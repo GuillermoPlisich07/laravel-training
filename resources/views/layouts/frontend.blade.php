@@ -38,7 +38,7 @@
                 <a class="link-secondary" href="#">Subscribe</a>
             </div>
             <div class="col-4 text-center">
-                <a class="blog-header-logo text-body-emphasis text-decoration-none" href="{{route('home_inicio')}}">
+                <a class="blog-header-logo text-body-emphasis text-decoration-none" href="{{route('template_inicio')}}">
                     <img src="{{asset('images/logo.png')}}" style="width: 100px;"/>
                 </a>
             </div>
@@ -53,18 +53,10 @@
 
         <div class="nav-scroller py-1 mb-3 border-bottom">
             <nav class="nav nav-underline justify-content-between">
-            <a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
-            <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+            <a class="nav-item nav-link link-body-emphasis active" href="{{route('template_inicio')}}">Home</a>
+            <a class="nav-item nav-link link-body-emphasis" href="{{route('formulario_inicio')}}">Formulario</a>
+            <a class="nav-item nav-link link-body-emphasis" href="{{route('helper_inicio')}}">Helper</a>
+            <a class="nav-item nav-link link-body-emphasis" href="{{route('email_inicio')}}">Email</a>
             </nav>
         </div>
     </div>

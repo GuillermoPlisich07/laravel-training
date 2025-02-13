@@ -9,4 +9,8 @@ class TemplateController extends Controller
     public function template_inicio(){
         return view('template.home');
     }
+
+    public function template_stack(){
+        return view('template.stack');
+    }
 }
