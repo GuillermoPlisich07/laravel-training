@@ -11,6 +11,7 @@ class EmailController extends Controller
     public function email_inicio(){
         return view('email.home');
     }
+    
     public function email_enviar(Request $request){
         $html = "<h1>Correo de prueba</h1><hr/> hola texto";
         $correo = new EjemploMailable($html);
