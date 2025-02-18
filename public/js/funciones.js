@@ -13,7 +13,7 @@ function carga_ajax_get(ruta, valor1, div) {
 
  }
  function confirmaAlert(pregunta, ruta) {
-     jCustomConfirm(pregunta, 'Tamila', 'Aceptar', 'Cancelar', function(r) {
+     jCustomConfirm(pregunta, 'Confirmacion', 'Aceptar', 'Cancelar', function(r) {
          if (r) {
              window.location = ruta;
          }
@@ -30,7 +30,7 @@ function carga_ajax_get(ruta, valor1, div) {
     {
         return false;
     }
-     window.location ="/pruebas/ejemplo_1/public/bd/buscador?b="+document.getElementById('b').value;
+     window.location ="/bd/buscador?b="+document.getElementById('b').value;
  }
  function soloNumeros(evt) {
      key = (document.all) ? evt.keyCode : evt.which;

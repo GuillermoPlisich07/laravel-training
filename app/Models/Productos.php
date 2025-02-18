@@ -13,7 +13,8 @@ class Productos extends Model
     public $timestamps = false;
     protected $table = 'productos';
 
-    public function categorias(){
-        return $this->belongsTo(Categorias::class);
+    public function categorias()
+    {
+        return $this->belongsTo(Categorias::class, 'categoria_id');
     }
 }

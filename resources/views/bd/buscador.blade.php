@@ -1,8 +1,21 @@
 @extends('../layouts.frontend')
 
 @section('content')
-<h1>BDD MySQL - Productos</h1>
+<h1>BDD MySQL - Buscador</h1>
 <x-flash/>
+<div class="row">
+    <div class="col-6">
+
+    </div>
+    <div class="col-6">
+        <form name="form_buscador" action="{{ route('bd_productos_buscador') }}" method="GET">
+            <div class="input-group mb-3">
+                <input type="text" name="b" id="b" value="" class="form-control" placeholder="Buscar...">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="buscador();"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
 <p class="d-flex justify-content-end">
     <a href="{{ route('bd_productos_add') }}" class="btn btn-success"><i class="fas fa-check"></i>Crear</a>
 </p>

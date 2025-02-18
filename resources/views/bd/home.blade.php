@@ -7,7 +7,13 @@
         <a href="{{ route('bd_categorias') }}">Categorias</a>
     </li>
     <li>
-        <a href="">Productos</a>
+        <a href="{{ route('bd_productos') }}">Productos</a>
+    </li>
+    <li>
+        <a href="{{ route('bd_productos_paginacion') }}">Productos-Paginacion</a>
+    </li>
+    <li>
+        <a href="{{ route('bd_productos_buscador') }}">Productos-Buscador</a>
     </li>
 </ul>
 @endsection

@@ -58,6 +58,7 @@
             <a class="nav-item nav-link link-body-emphasis" href="{{route('helper_inicio')}}">Helper</a>
             <a class="nav-item nav-link link-body-emphasis" href="{{route('email_inicio')}}">Email</a>
             <a class="nav-item nav-link link-body-emphasis" href="{{route('bd_inicio')}}">BDD MySQL</a>
+            <a class="nav-item nav-link link-body-emphasis" href="{{route('utiles_inicio')}}">Utiles</a>
             </nav>
         </div>
     </div>

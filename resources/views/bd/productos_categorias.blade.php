@@ -1,7 +1,7 @@
 @extends('../layouts.frontend')
 
 @section('content')
-<h1>BDD MySQL - Productos</h1>
+<h1>Productos {{ $categoria->nombre}} - Cant: ({{ $productos->count() }})</h1>
 <x-flash/>
 <p class="d-flex justify-content-end">
     <a href="{{ route('bd_productos_add') }}" class="btn btn-success"><i class="fas fa-check"></i>Crear</a>
