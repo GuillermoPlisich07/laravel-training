@@ -53,16 +53,29 @@
 
         <div class="nav-scroller py-1 mb-3 border-bottom">
             <nav class="nav nav-underline justify-content-between">
+
             <a class="nav-item nav-link link-body-emphasis active" href="{{route('template_inicio')}}">Home</a>
             <a class="nav-item nav-link link-body-emphasis" href="{{route('formulario_inicio')}}">Formulario</a>
             <a class="nav-item nav-link link-body-emphasis" href="{{route('helper_inicio')}}">Helper</a>
             <a class="nav-item nav-link link-body-emphasis" href="{{route('email_inicio')}}">Email</a>
             <a class="nav-item nav-link link-body-emphasis" href="{{route('bd_inicio')}}">BDD MySQL</a>
             <a class="nav-item nav-link link-body-emphasis" href="{{route('utiles_inicio')}}">Utiles</a>
+            
+            
+            @if(Auth::check())
+               @if (@session('perfil_id') != 1)
+                    <a class="p-2 link-secondary" href="{{ route('protegida_inicio') }}">Protegida</a>
+               @endif
+               <a class="p-2 link-secondary" href="{{ route('protegida_otra') }}">Protegida 2</a>
+               <a class="p-2 link-secondary" onclick="confirmaAlert('Desae cerrar la sesion?','{{ route('acceso_salir_post') }}')">Salir</a>
+            @else
+                <a class="nav-item nav-link link-body-emphasis" href="{{route('acceso_login')}}">Login</a>
+                <a class="nav-item nav-link link-body-emphasis" href="{{route('acceso_registro')}}">Registro</a>
+            @endif
+            
             </nav>
         </div>
     </div>
-
     
     <main class="container">
         <!-- Content -->

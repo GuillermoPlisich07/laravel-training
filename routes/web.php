@@ -8,6 +8,9 @@ use App\Http\Controllers\HelperController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\BdController;
 use App\Http\Controllers\UtilesController;
+use App\Http\Controllers\AccesoController;
+use App\Http\Controllers\ProtegidaController;
+use App\Http\Middleware\Acceso;
 
 Route::get('/', [HomeController::class, 'home_inicio'])->name('home_inicio');
 Route::get('/hola', [HomeController::class, 'home_hola'])->name('home_hola');
@@ -71,3 +74,16 @@ Route::get('/utiles/pdf', [UtilesController::class, 'utiles_pdf'])->name('utiles
 Route::get('/utiles/excel', [UtilesController::class, 'utiles_excel'])->name('utiles_excel');
 Route::get('/utiles/client-rest', [UtilesController::class, 'utiles_client_rest'])->name('utiles_client_rest');
 Route::get('/utiles/client-soap', [UtilesController::class, 'utiles_client_soap'])->name('utiles_client_soap');
+
+
+//////////////////////// Acceso ////////////////////////
+Route::get('/acceso/login', [AccesoController::class, 'acceso_login'])->name('acceso_login');
+Route::post('/acceso/login', [AccesoController::class, 'acceso_login_post'])->name('acceso_login_post');
+Route::get('/acceso/registro', [AccesoController::class, 'acceso_registro'])->name('acceso_registro');
+Route::post('/acceso/registro', [AccesoController::class, 'acceso_registro_post'])->name('acceso_registro_post');
+Route::get('/acceso/salir', [AccesoController::class, 'acceso_salir_post'])->name('acceso_salir_post');
+
+//////////////////////// Protegida ////////////////////////
+Route::get('/protegida', [ProtegidaController::class, 'protegida_inicio'])->name('protegida_inicio')->middleware(Acceso::class);
+Route::get('/protegida/otra', [ProtegidaController::class, 'protegida_otra'])->name('protegida_otra')->middleware(Acceso::class);
+Route::get('/protegida/sin-acceso', [ProtegidaController::class, 'protegida_sin_acceso'])->name('protegida_sin_acceso');
