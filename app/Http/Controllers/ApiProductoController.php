@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Productos;
+use App\Models\ProductosFotos;
+use Illuminate\Support\Str;
 
-class EjemploController extends Controller
+
+class ApiProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        echo "Hola mundo";
+        $datos = Productos::orderBy('id', 'desc')->get();
+        return response()->json($datos,200);
     }
 
     /**
