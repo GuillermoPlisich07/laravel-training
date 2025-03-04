@@ -64,14 +64,23 @@ class ApiCategoriaController extends Controller
                 'status' => 'Bad Request'
             ]], 400);
         }
-        $categoria = Categorias::Where('id',$id)->firstOrFail();
-        $categoria->nombre=$request->input('nombre');
-        $categoria->slug=Str::of($request->input('nombre'))->slug('-');
-        $categoria->save();
-        return response()->json(['response' => [
-            'message' => 'La categoria fue editada correctamente',
-            'status' => 'Ok'
-        ]], 200);
+        $datos = Categorias::Where('id',$id)->first();
+        if(!is_object($datos)){
+            return response()->json(['response' => [
+                'message' => 'La categoria no existe',
+                'status' => 'Bad Request'
+            ]], 400);
+            
+        }else{
+            $categoria = Categorias::Where('id',$id)->firstOrFail();
+            $categoria->nombre=$request->input('nombre');
+            $categoria->slug=Str::of($request->input('nombre'))->slug('-');
+            $categoria->save();
+            return response()->json(['response' => [
+                'message' => 'La categoria fue editada correctamente',
+                'status' => 'Ok'
+            ]], 200);
+        }
     }
 
     /**

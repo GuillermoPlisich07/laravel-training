@@ -9,6 +9,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\BdController;
 use App\Http\Controllers\UtilesController;
 use App\Http\Controllers\AccesoController;
+use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\ProtegidaController;
 use App\Http\Middleware\Acceso;
 
@@ -87,3 +88,8 @@ Route::get('/acceso/salir', [AccesoController::class, 'acceso_salir_post'])->nam
 Route::get('/protegida', [ProtegidaController::class, 'protegida_inicio'])->name('protegida_inicio')->middleware(Acceso::class);
 Route::get('/protegida/otra', [ProtegidaController::class, 'protegida_otra'])->name('protegida_otra')->middleware(Acceso::class);
 Route::get('/protegida/sin-acceso', [ProtegidaController::class, 'protegida_sin_acceso'])->name('protegida_sin_acceso');
+
+//////////////////////// Paypal ////////////////////////
+Route::get('/paypal', [PaypalController::class, 'paypal_inicio'])->name('paypal_inicio');
+Route::get('/paypal/respuesta', [PaypalController::class, 'paypal_respuesta'])->name('paypal_respuesta');
+Route::get('/paypal/cancelado', [PaypalController::class, 'paypal_cancelado'])->name('paypal_cancelado');

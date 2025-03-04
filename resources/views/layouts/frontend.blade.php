@@ -72,7 +72,7 @@
                 <a class="nav-item nav-link link-body-emphasis" href="{{route('acceso_login')}}">Login</a>
                 <a class="nav-item nav-link link-body-emphasis" href="{{route('acceso_registro')}}">Registro</a>
             @endif
-            
+            <a class="nav-item nav-link link-body-emphasis" href="{{route('paypal_inicio')}}">Paypal</a>
             </nav>
         </div>
     </div>
